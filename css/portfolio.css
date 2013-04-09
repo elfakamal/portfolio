@@ -7,9 +7,10 @@
 	text-rendering: optimizeLegibility;
 }
 
-body > header, body > footer
+body header, body footer
 {
-	background-color: #F5F5F5;
+	/*background-color: #ddd;*/
+	/*background-color: #F5F5F5;*/
 	font-family: Lato;
 	font-size: 14px;
 }
@@ -45,17 +46,30 @@ hgroup#hgroupTopBar div:nth-child(5)
 }
 
 
+/****** SECTION FIRST PAGE ******/
+
+section#section-first-page
+{
+	background-image: url(../images/bg1.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
 /****** HEADER ******/
 header
 {
 	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 hgroup#header-content
 {
 	width: 90%;
 	/*background-color: tomato;*/
-	height: 160px;
+	height: 200px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -117,6 +131,8 @@ span#span-contact
 	margin: 1px;
 	padding: 0px 5px 0px 5px;
 }
+
+span#span-contact { font-weight: bold; }
 
 .fontSize10 { font-size: 10px; }
 .fontSize20 { font-size: 20px; }
@@ -189,42 +205,44 @@ div#div-cube
 /****** SECTION - front menu ******/
 nav#nav-front-menu
 {
-	font-size: 16px;
+	font-size: 20px;
 	font-family: 'Fjalla One', sans-serif;
 	color: #ffffff;
-
-	text-shadow: rgba(0, 0, 0, .7) 0px 0px 9px;
 
 	padding-top: 50px;
 	height: 200px;
 
-	/*background-color: skyblue;*/
-	background-image: url(../images/trame.png);
+	/*background-color: #dddddd;*/
+	/*background-image: url(../images/trame.png);*/
 }
 
 /*header { background-color: tomato !important;}*/
 
 nav#nav-front-menu ul
 {
-	width: 330px;
+	width: 400px;
 	list-style-type: none;
 
 	margin-left: auto;
 	margin-right: auto;
 
-	background-color: greenyellow;
+	/*background-color: greenyellow;*/
 }
 
 nav#nav-front-menu ul a
 {
 	float: left;
 	width: 32%;
+	height: 120px;
+	line-height: 120px;
 
 	text-align: center;
-	line-height: 100px;
 	text-decoration: none;
 
 	margin-right: 1px;
+
+	text-shadow: rgba(0, 0, 0, .7) 0px 0px 9px;
+	box-shadow: rgba(0,0,0,.5) 0px 0px 10px;
 
 	border-radius: 100%;
 	-moz-border-radius: 100%;
@@ -274,15 +292,136 @@ nav#nav-front-menu ul a#a-contact:hover /* li#li-contact:hover*/
 }
 
 /****** SECTION - main content ******/
-section#main-content
+section#section-main-content
 {
-	height: 600px;
+	font-family: 'Noto sans', sans-serif;
+	font-size: 18px;
 }
 
-section#main-content article
+/****** SECTION - About me ******/
+section#section-about
+{
+	/*background-color: #20B2AA;*/
+	width: 90%;
+	margin: 0 auto;
+	padding: 50px 0px 100px 0px;
+}
+
+section#section-about #img-big-logo
 {
 	float: left;
+	margin-right: 50px;
+}
+
+section#section-about #div-about
+{
+	margin-top: 50px;
+	/*background-color: tomato;*/
+}
+
+section#section-about h1
+{
+	font-size: 4em;
+	margin-left: 30px;
+
+	-webkit-text-shadow: 1px 1px 0px rgba(255, 255, 255, .5);
+	-moz-text-shadow: 1px 1px 0px rgba(255, 255, 255, .5);
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, .5);
+}
+
+section#section-about p#p-about
+{
+	padding: 30px 30px 30px 30px;
+	line-height: 30px;
 }
 
 
+/**** SECTION - Skills ****/
+section#section-skills
+{
+	height: 1000px;
+}
+
+div#div-skills-viz
+{
+	background-image: url(../images/trame.png);
+	background-color: #222222;
+	background-position: top center;
+}
+
+/*.progress-meter
+{
+	-webkit-transition-duration: 1000ms;
+	-webkit-transition-property: translate;
+	-webkit-transition-timing-function: ease-in;
+}*/
+
+.skill-1
+{
+	-webkit-transform: translate(250px, 100px);
+}
+.skill-2
+{
+	-webkit-transform: translate(250px, 220px);
+}
+.skill-3
+{
+	-webkit-transform: translate(250px, 340px);
+}
+.skill-4
+{
+	-webkit-transform: translate(250px, 460px);
+}
+
+.skill-1 .background
+{
+	fill: rgba(217, 77, 77, .25);
+}
+.skill-1 .foreground
+{
+	fill: rgb(217, 77, 77);
+}
+
+.skill-2 .background
+{
+	fill: rgba(235, 165, 56, .25);
+}
+.skill-2 .foreground
+{
+	fill: rgb(235, 165, 56);
+}
+
+.skill-3 .background
+{
+	fill: rgba(135, 171, 102, .25);
+}
+.skill-3 .foreground
+{
+	fill: rgb(135, 171, 102);
+}
+
+.skill-4 .background
+{
+	fill: rgba(75, 179, 210, .25);
+}
+.skill-4 .foreground
+{
+	fill: rgb(75, 179, 210);
+}
+
+
+
+.progress-meter text
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+/**** SECTION - my works ****/
+section#section-works
+{
+	height: 500px;
+}
 
