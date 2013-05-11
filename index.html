@@ -3,8 +3,11 @@
 <head>
 	<title>Portfolio</title>
 	<meta charset="utf-8"/>
-	<!--<meta http-equiv="refresh" content="5"/>-->
+	<meta http-equiv="refresh" content="500"/>
 	<link rel="stylesheet" href="css/portfolio.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+	<link rel="stylesheet" type="text/css" href="css/stapel.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
 
 	<!-- FONTS -->
 	<!--Russo+One-->
@@ -50,7 +53,7 @@
 					<span id="span-apps" class="fontSize30">
 						building beautiful applications
 					</span>
-					<span>feel free to look arround, and if you like what you see</span>
+					<span>feel free to look around, and if you like what you see</span>
 					<span id="span-contact" class="fontSize20">email me and let's talk</span>
 				</p>
 
@@ -97,12 +100,28 @@
 		</section>
 
 		<section id="section-skills">
-			<div id="div-skills-viz">
-
+			<div id="div-skills">
+				<h1>Skills</h1>
+				<ul id="ul-skills"></ul>
 			</div>
+			<!--<div id="div-skills-viz"></div>-->
 		</section>
 
-		<section id="section-works">works section</section>
+		<section id="section-works">
+			<div id="div-works">
+				<h1 id="h1-works-title">Works</h1>
+				<div id="div-works-container">
+					<div id="div-works-filters"></div>
+					<div id="div-works-info">
+						<h3 id="span-work-category-name"></h3>
+					</div>
+					<div id="div-works-controls">
+						<button id="close" class="back">&larr;</button>
+					</div>
+				</div>
+				<ul id="ul-works" class="tp-grid"></ul>
+			</div>
+		</section>
 
 	</section>
 
@@ -111,8 +130,12 @@
 	</footer>
 
 	<!-- Load JS here for greater good =============================-->
-	<script src="js/modernizr-2.6.2.js"></script>
+	<script src="js/modernizr.custom.72910.js"></script>
+	<script src="components/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.stapel.js"></script>
+
 	<script src="js/d3.js"></script>
-	<script src="js/portfolio.js"></script>
+	<script src="js/skills.js"></script>
+	<script src="js/works-2.js"></script>
 </body>
 </html>

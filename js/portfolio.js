@@ -14,28 +14,24 @@ var skills = [
 		name			: "Photoshop",
 		weight			: .8,
 		customClasses	: "skill-1",
-		coordinates		: {x: 50, y: 50},
 		duration		: 500
 	},
 	{
 		name			: "Illustrator",
 		weight			: .2,
 		customClasses	: "skill-2",
-		coordinates		: {x: 120, y: 150},
 		duration		: 1000
 	},
 	{
 		name			: "InDesign",
 		weight			: .8,
 		customClasses	: "skill-3",
-		coordinates		: {x: 300, y: 250},
 		duration		: 300
 	},
 	{
 		name			: "HTML5",
 		weight			: .6,
 		customClasses	: "skill-4",
-		coordinates		: {x: 200, y: 150},
 		duration		: 2000
 	}
 ];

@@ -1,0 +1,79 @@
+[
+	{
+		weight			: .7,
+		customClasses	: "skill-1",
+		duration		: 1000,
+		content			: {
+			title	: "Frontend development",
+			details	: [
+				"HTML5",
+				"CSS3",
+				"Javascript",
+				"Aura",
+				"Backbone",
+				"RequireJS",
+				"Underscore",
+				"SocketIO",
+				"SVG",
+				"D3js",
+				"jQuery",
+				"AJAX",
+				"Action Script",
+				"Papervision3D",
+				"Flex / AIR",
+			]
+		}
+	},
+	{
+		weight			: .8,
+		customClasses	: "skill-2",
+		duration		: 1500,
+		content			: {
+			title	: "Backend development",
+			details	: [
+				"PHP",
+				"MySQL",
+				"Symfony",
+				"Doctrine",
+				"NodeJS",
+				"Memcached",
+				"Gearman",
+				"Supervisor",
+				"XHProf",
+				"JAVA"
+			]
+		}
+	},
+	{
+		weight			: .8,
+		customClasses	: "skill-3",
+		duration		: 2000,
+		content			: {
+			title	: "Multimedia",
+			details	: [
+				"Photoshop",
+				"Illustrator",
+				"InDesign",
+				"Flash",
+				"Flex"
+			]
+		}
+	},
+	{
+		weight			: .7,
+		customClasses	: "skill-4",
+		duration		: 2500,
+		content			: {
+			title	: "Methods & Tools",
+			details	: [
+				"MVC",
+				"event-driven architecture",
+				"Active Record Pattern",
+				"GIT (Github)",
+				"Twitter Bootstrap",
+				"Netbeans IDE",
+				"MySQL Workbench"
+			]
+		}
+	}
+]
