@@ -49,11 +49,100 @@ var works = [
 		},
 		{
 			group		: "Neiio Redesign",
+			title       : "Groups",
+			thumbUrl    : "neiio-redesign/7.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/8.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/9.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/10.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/11.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/12.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/13.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/14.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/15.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/16.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
+			title       : "Neiio Organize",
+			thumbUrl    : "neiio-redesign/17.png",
+			tags        : ["Web", "Graphic"],
+			description	: "",
+			heightRatio	: true
+		},
+		{
+			group		: "Neiio Redesign",
 			title       : "Neiio Redesign",
 			thumbUrl    : "neiio-redesign/thumb.png",
 			tags        : ["Web", "Graphic", "Logo", "Business Card"],
 			description	: "",
-			heightRatio	: true
+			heightRatio	: true,
+			diaporama	: false
 		},
 
 
@@ -163,13 +252,13 @@ var works = [
 			tags        : ["Graphic", "Logo"],
 			heightRatio	: true
 		},
-		{
-			group		: "ZigZag",
-			title       : "Vertical ZigZag",
-			thumbUrl    : "zigzag/2.png",
-			tags        : ["Graphic", "Logo"],
-			heightRatio	: true
-		},
+//		{
+//			group		: "ZigZag",
+//			title       : "Vertical ZigZag",
+//			thumbUrl    : "zigzag/2.png",
+//			tags        : ["Graphic", "Logo"],
+//			heightRatio	: true
+//		},
 		{
 			group		: "ZigZag",
 			title       : "ZigZag logo",
@@ -467,6 +556,8 @@ var works = [
 
 
 
+var groups = {};//[];
+
 var tagsMapping = [];
 
 works.forEach(function (work, workIndex)
@@ -481,7 +572,21 @@ works.forEach(function (work, workIndex)
 			}
 		});
 	}
+
+	if( work.hasOwnProperty("group") )
+	{
+		if( groups.hasOwnProperty(work.group) )
+		{
+			groups[work.group].push(work);
+		}
+		else
+		{
+			groups[work.group] = [work];
+		}
+	}
 });
+
+
 
 //console.log(tagsMapping);
 
@@ -499,60 +604,53 @@ var bodySelection = d3.select("body");
 
 var workSVGSelection = bodySelection.select("#div-works-filters");
 
-//var filtersTitle = workSVGSelection.append("div")
-//    .attr("id", "div-works-filters-title")
-//    .text("Filters");
-
-//var filterItems = workSVGSelection.append("div")
-//    .attr("id", "div-works-filters-items");
-
-var allTagsTag = d3.select("#div-works-filters")
-	.append("button")
-	.attr("id", "spanAllWorkTags")
-	.attr("class", "spanAllWorkTags tag active")
-	.text("All")
-	.on("click", function(d, i)
-	{
-		var realTags = $("button.workTag.active");
-
-		if( !$(this).hasClass("active") )
-		{
-			$(this).toggleClass("active");
-
-			//unselect the other tags.
-			$(".workTag").removeClass("active");
-		}
-		else if( $(this).hasClass("active") && realTags.length > 0 )
-		{
-			$(this).toggleClass("active");
-		}
-	});
-
-var workTags = d3.select("#div-works-filters")
-	.selectAll("button.workTag")
-    .data(tagsMapping)
-    .enter()
-    .append("button")
-	.attr("class", "workTag tag")
-    .text(function(d)
-    {
-        return d;
-    })
-	.on("click", function(d, i)
-	{
-		$(this).toggleClass("active");
-
-		var realTags = $("button.workTag.active");
-
-		if( realTags.length == 0 )
-		{
-			$("#spanAllWorkTags").addClass("active");
-		}
-		else
-		{
-			$("#spanAllWorkTags").removeClass("active");
-		}
-	});
+//var allTagsTag = d3.select("#div-works-filters")
+//	.append("button")
+//	.attr("id", "spanAllWorkTags")
+//	.attr("class", "spanAllWorkTags tag active")
+//	.text("All")
+//	.on("click", function(d, i)
+//	{
+//		var realTags = $("button.workTag.active");
+//
+//		if( !$(this).hasClass("active") )
+//		{
+//			$(this).toggleClass("active");
+//
+//			//unselect the other tags.
+//			$(".workTag").removeClass("active");
+//		}
+//		else if( $(this).hasClass("active") && realTags.length > 0 )
+//		{
+//			$(this).toggleClass("active");
+//		}
+//	});
+//
+//var workTags = d3.select("#div-works-filters")
+//	.selectAll("button.workTag")
+//    .data(tagsMapping)
+//    .enter()
+//    .append("button")
+//	.attr("class", "workTag tag")
+//    .text(function(d)
+//    {
+//        return d;
+//    })
+//	.on("click", function(d, i)
+//	{
+//		$(this).toggleClass("active");
+//
+//		var realTags = $("button.workTag.active");
+//
+//		if( realTags.length == 0 )
+//		{
+//			$("#spanAllWorkTags").addClass("active");
+//		}
+//		else
+//		{
+//			$("#spanAllWorkTags").removeClass("active");
+//		}
+//	});
 
 
 
@@ -561,12 +659,16 @@ var workElements = d3.select("#ul-works")
 	.data(works)
 	.enter()
 	.append("li")
+	.attr("class", "thumb")
 	.attr("data-pile", function(d, i)
 	{
 		return d.group;
-	})
-	.append("a")
-	.attr("href", "#");
+	});
+
+
+
+//	.append("a")
+//	.attr("href", "#");
 
 
 
@@ -619,6 +721,7 @@ var workElementsThumbs = workElements.append("img")
 var $grid = $('#ul-works'),
 	$name = $('#span-work-category-name'),
 	$close = $('#close'),
+	$diapo = $('#buttonDiaporama'),
 	$loader = $('<div class="loader"><i></i><i></i><i></i><span>Loading...</span></div>').insertBefore($grid),
 
 	stapel = $grid.stapel(
@@ -635,15 +738,139 @@ var $grid = $('#ul-works'),
 		onAfterOpen : function( pileName )
 		{
 			$close.show();
+			$diapo.show();
 		}
 	} );
 
 $close.on('click', function()
 {
+	$("#div-reveal-viewport").removeClass("open");
+
 	$close.hide();
+	$diapo.hide();
 	$name.empty();
 	stapel.closePile();
 });
 
+var clickedOnMenu = false;
+var browserWidth = 0;
+var browserHeight = 0;
+
+function scrollOnClick()
+{
+	$("#nav-front-menu ul a, #span-contact a").click(function(e)
+	{
+		e.preventDefault();
+		var t = $(this).attr("href").replace("/#", "");
+		$.address.value(t);
+		var n = $(this).attr("data-anchor"), r = $(n).attr("data-section-title");
+		$.address.title(r);
+		var i = $(n).offset().top, s = $("body").outerHeight();
+		s - i < browserHeight && (i = s - browserHeight);
+		clickedOnMenu = true;
+		$("html:not(:animated),body:not(:animated)").animate({scrollTop: i}, 1500, "easeInOutQuint");
+		return !1;
+	});
+}
 
 
+function addressChange()
+{
+	$.address.change(function(e)
+	{
+		var t = e.path;
+
+		$("#nav-front-menu a, #span-contact a").each(function()
+		{
+			var e = $(this).attr("href").replace("/#", "");
+
+			if (e == t && !clickedOnMenu)
+			{
+				$(this).trigger("click", [!0]);
+				clickedOnMenu = true;
+			}
+		});
+	});
+}
+
+
+$(document).ready(function($)
+{
+	browserWidth = $(window).width();
+    browserHeight = $(window).height();
+
+	scrollOnClick();
+	addressChange();
+
+
+	$("#buttonCloseDiapo").click(function(event)
+	{
+		$("#div-reveal-viewport").removeClass("open");
+		$("html:not(:animated),body:not(:animated)").animate(
+			{
+				scrollTop: $("#section-works").offset().top
+			},
+			1500,
+			"easeInOutQuint"
+		);
+	});
+
+	$("#buttonDiaporama").click(function(event)
+	{
+		var workCategoryName = $name.text();
+		var galleryItems = [];
+
+		if( groups.hasOwnProperty(workCategoryName) )
+		{
+			var rawItems = groups[workCategoryName];
+
+			rawItems.forEach(function( item, index )
+			{
+				if( !item.hasOwnProperty("diaporama") || ( item.hasOwnProperty("diaporama") && item.diaporama == true ) )
+				{
+					galleryItems.push({ src: "images/works/" + item.thumbUrl });
+				}
+			});
+		}
+
+		$("#div-reveal-viewport").addClass("open");
+
+		//remove current slides.
+		$("#div-slides").html("");
+
+		var slides = d3.select("#div-slides")
+			.selectAll("section")
+			.data(galleryItems)
+			.enter()
+			.append("section")
+			.attr("class", "future");
+
+		var images = slides.append("img")
+			.attr('src', function(d)
+			{
+				return d.src;
+			});
+
+		$("#div-slides section:first-child").removeClass("future");
+		$("#div-slides section:first-child").addClass("present");
+
+		Reveal.slide(0);
+		Reveal.sync();
+
+
+
+		$("body").animate(
+			{
+				scrollTop: $("#div-reveal-viewport").offset().top
+			},
+			{
+				duration: 1000,
+				specialEasing:
+				{
+					scrollTop: 'easeInOutQuint'
+				}
+			}
+		);
+	});
+
+});
