@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-	<title>Portfolio</title>
+	<title>Kamal Farsaoui</title>
 	<meta charset="utf-8"/>
-	<meta http-equiv="refresh" content="500"/>
+	<!--<meta http-equiv="refresh" content="500"/>-->
 	<link rel="stylesheet" href="css/portfolio.css"/>
 	<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
 	<link rel="stylesheet" type="text/css" href="css/stapel.css" />
 	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
 
 	<!-- FONTS -->
 	<!--Russo+One-->
@@ -16,9 +21,33 @@
 	<!--Noto+Sans-->
 	<!--Signika+Negative-->
 	<!--Signika-->
-	<link href='http://fonts.googleapis.com/css?family=Russo+One|Source+Code+Pro|Fjalla+One|Noto+Sans|Signika+Negative|Signika' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Russo+One|Source+Code+Pro|Fjalla+One|Noto+Sans|Signika+Negative|Signika' rel='stylesheet' type='text/css'/>
+
+	<script src="js/modernizr.custom.72910.js"></script>
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.address-1.5.min.js"></script>
+	<!--<script src="js/jquery.history.js"></script>-->
+
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-41302927-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
 </head>
 <body>
+	<section id="section-aux-menu">
+
+	</section>
 	<hgroup id="hgroupTopBar">
 		<div id="divTopBar1"></div>
 		<div id="divTopBar2"></div>
@@ -54,7 +83,11 @@
 						building beautiful applications
 					</span>
 					<span>feel free to look around, and if you like what you see</span>
-					<span id="span-contact" class="fontSize20">email me and let's talk</span>
+					<span id="span-contact" class="fontSize20">
+						<a href="/#/contact" data-anchor="#section-contact">
+							email me and let's talk
+						</a>
+					</span>
 				</p>
 
 				<div id="div-cube">
@@ -70,17 +103,18 @@
 		</header>
 
 		<nav id="nav-front-menu">
+			<div id="buttons"></div>
 			<ul>
 				<li id="li-about">
-					<a id="a-about" href="#">About Me !</a>
+					<a id="a-about" href="/#/about" data-anchor="#section-about">About Me !</a>
 					<span id="span-symbol"></span>
 				</li>
 				<li id="li-works">
-					<a id="a-works" href="#">My works</a>
+					<a id="a-works" href="/#/works" data-anchor="#section-works">My works</a>
 					<span id="span-symbol"></span>
 				</li>
 				<li id="li-contact">
-					<a id="a-contact" href="#">Contact</a>
+					<a id="a-contact" href="/#/contact" data-anchor="#section-contact">Contact</a>
 					<span id="span-symbol"></span>
 				</li>
 			</ul>
@@ -88,18 +122,25 @@
 	</section>
 
 	<section id="section-main-content">
-		<section id="section-about">
+		<section id="section-about" data-section-title="Kamal Farsaoui - About">
 			<img id="img-big-logo" src="images/logo_kamal_large.png"/>
 			<div id="div-about">
 				<h1>About me</h1>
 				<p id="p-about">
-					I'm a web designer/developer with more that 7 years of professional experience.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam risus, dignissim pharetra sagittis sed, adipiscing nec felis. Maecenas non nulla eget ligula semper aliquet. Pellentesque adipiscing pulvinar tortor, a adipiscing felis commodo in. Vestibulum dui magna, mattis in bibendum a, congue vitae lectus. In eu odio tortor, vel congue lacus. Donec viverra viverra eros, in egestas ligula adipiscing non. Morbi et ultricies sapien. Duis metus odio, commodo in tempor quis, euismod et ligula. Vivamus tristique condimentum ipsum sit amet posuere.
+					I'm a web designer/developer with more than 7 years of professional experience.
+					Passionate about Web Design and Web Development technologies,
+					I contributed to build robust and scalable applications for my last company.
+
+					I am also an entrepreneur, I founded 2 companies until now; CSI (Cr&eacute;ateur de Solutions Informatiques)
+					and <a href="https://twitter.com/neiio" target="_blank">Neiio</a>.
+
+					I like working with agile methods like SCRUM, and am able to work in mission critical projects
+					with small deadlines and big challenges.
 				</p>
 			</div>
 		</section>
 
-		<section id="section-skills">
+		<section id="section-skills" name="skills" data-section-title="Kamal Farsaoui - Skills">
 			<div id="div-skills">
 				<h1>Skills</h1>
 				<ul id="ul-skills"></ul>
@@ -107,35 +148,100 @@
 			<!--<div id="div-skills-viz"></div>-->
 		</section>
 
-		<section id="section-works">
+		<section id="section-works" name="works" data-section-title="Kamal Farsaoui - Works">
 			<div id="div-works">
 				<h1 id="h1-works-title">Works</h1>
 				<div id="div-works-container">
-					<div id="div-works-filters"></div>
+					<!--<div id="div-works-filters"></div>-->
 					<div id="div-works-info">
 						<h3 id="span-work-category-name"></h3>
 					</div>
 					<div id="div-works-controls">
 						<button id="close" class="back">&larr;</button>
+						<button id="buttonDiaporama" style="">Diaporama</button>
 					</div>
 				</div>
 				<ul id="ul-works" class="tp-grid"></ul>
+			</div>
+
+			<div id="div-reveal-viewport" class="reveal-viewport closed">
+				<div id="div-reveal" class="reveal">
+					<div id="div-slides" class="slides">
+						<section></section>
+					</div>
+					<button id="buttonCloseDiapo"></button>
+				</div>
+			</div>
+
+		</section>
+
+
+
+		<section id="section-contact" data-section-title="Kamal Farsaoui - Contact">
+			<div id="div-contact-me">
+				<h1>Contact me</h1>
+				<article>
+					<div>
+						I live in <a href="https://maps.google.com/maps?q=Montpellier,+France&hl=en&ie=UTF8&sll=43.610725,3.876801&sspn=0.168786,0.378685&oq=montpellier&hnear=Montpellier,+H%C3%A9rault,+Languedoc-Roussillon,+France&t=m&z=12&iwloc=A" target="_blank">Montpellier</a>, France
+					</div>
+					<div>
+						(+33) 676-226-566
+					</div>
+					<div>
+						<a href="mailto:elfa.kamal@gmail.com">elfa.kamal@gmail.com</a>
+					</div>
+					<div class="h-spacer"></div>
+					<h2>Follow me</h2>
+					<div>
+						<a id="a-twitter-profile" href="https://twitter.com/elfakamal" target="_blank"><img src="images/social_icons/twitter-64.png"/></a>
+						<a id="a-twitter-profile" href="http://fr.linkedin.com/pub/kamal-farsaoui/27/776/8b8" target="_blank"><img src="images/social_icons/linkedin-64.png"/></a>
+						<a id="a-twitter-profile" href="https://github.com/elfakamal" target="_blank"><img src="images/social_icons/github-64.png"/></a>
+						<a id="a-twitter-profile" href="https://geekli.st/kamal" target="_blank"><img src="images/social_icons/geeklist-64.png"/></a>
+					</div>
+				</article>
 			</div>
 		</section>
 
 	</section>
 
-	<footer>
-		<section id="section-contact">contact me section</section>
-	</footer>
 
 	<!-- Load JS here for greater good =============================-->
-	<script src="js/modernizr.custom.72910.js"></script>
-	<script src="components/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.stapel.js"></script>
 
 	<script src="js/d3.js"></script>
 	<script src="js/skills.js"></script>
 	<script src="js/works-2.js"></script>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+//			history: true,
+			center: true,
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: "100%",
+//			height: 700,
+
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.9,
+			maxScale: 1.0,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'linear'
+		});
+
+	</script>
+
 </body>
 </html>
